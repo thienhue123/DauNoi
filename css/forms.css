@@ -1,0 +1,72 @@
+/* =========================================================================
+   forms.css — FORM, INPUT, BUTTON
+   ========================================================================= */
+
+.nhom-form { margin-bottom: 1.5rem; }
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--green-900);
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--paper-card);
+  color: var(--ink-900);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--green-600);
+  box-shadow: 0 0 0 3px rgba(26, 122, 82, 0.15);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+textarea { resize: vertical; min-height: 100px; }
+
+button {
+  background-color: var(--green-700);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+button:hover { background-color: var(--green-800); }
+button:active { transform: scale(0.98); }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+button:disabled:hover { background-color: var(--green-700); }
+
+/* Nút phụ, viền — dùng cho hành động ít quan trọng hơn (VD "Sửa lại") */
+.nut-vien {
+  background: transparent;
+  color: var(--green-700);
+  border: 1.5px solid var(--green-600);
+  box-shadow: none;
+}
+.nut-vien:hover { background: var(--green-50); color: var(--green-800); }

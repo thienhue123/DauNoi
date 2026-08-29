@@ -1,0 +1,93 @@
+.user-info {
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.user-info p { margin: 0; color: var(--green-900); font-weight: 600; }
+
+.menu-section { margin: 2rem 0; }
+.menu-section h2 { border-bottom: 2px solid var(--green-100); padding-bottom: 0.5rem; }
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.menu-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--green-600);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  color: var(--ink-900);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  display: block;
+}
+.menu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); color: var(--ink-900); }
+.menu-card h3 { margin-top: 0; color: var(--green-900); }
+.menu-card p { margin-bottom: 0; color: var(--ink-700); }
+
+.menu-card.primary,
+.menu-card.success,
+.menu-card.warning,
+.menu-card.danger {
+  border-top-color: var(--green-600);
+}
+
+.admin-only { display: none; }
+.admin-only.show { display: block; }
+
+/* ----- Vùng chọn trạng thái / ghi chú trong thẻ rà soát thủ công ----- */
+.vung-trang-thai-ra-soat select,
+.vung-trang-thai-ra-soat textarea {
+  margin-bottom: 0.75rem;
+}
+.vung-trang-thai-ra-soat .nut-luu-trang-thai {
+  margin-top: 0.25rem;
+}
+/* ----- Trang doi chieu & phan loai xet nghiem ----- */
+.bo-loc-doi-chieu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0 1.5rem;
+}
+.nut-loc-xet-nghiem {
+  background: var(--paper-card);
+  color: var(--ink-700);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.nut-loc-xet-nghiem.dang-chon {
+  background: var(--green-600);
+  color: white;
+  border-color: var(--green-600);
+}
+
+.ghi-chu-nhom-xet-nghiem {
+  color: var(--ink-500);
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+.vung-trang-thai-xet-nghiem select,
+.vung-trang-thai-xet-nghiem textarea {
+  margin-bottom: 0.75rem;
+}
+.vung-trang-thai-xet-nghiem .nut-luu-phan-loai-xet-nghiem {
+  margin-top: 0.25rem;
+}

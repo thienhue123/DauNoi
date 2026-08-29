@@ -1,0 +1,108 @@
+/* =========================================================================
+   effects.css — HIỆU ỨNG
+   ========================================================================= */
+body {
+  background-image:
+    radial-gradient(60rem 40rem at 8% -10%, var(--glow-gold) 0%, transparent 60%),
+    radial-gradient(50rem 38rem at 100% 0%, var(--glow-green) 0%, transparent 55%),
+    radial-gradient(40rem 30rem at 50% 110%, rgba(11, 61, 44, 0.12) 0%, transparent 60%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+nav {
+  background-color: var(--green-800);
+  border-bottom: 2px solid var(--gold-400);
+}
+.kinh-mo {
+  background-color: var(--glass-bg-dam);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+}
+.the-ket-qua,
+.menu-card {
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+.the-ket-qua:hover {
+  box-shadow: var(--shadow), 0 0 0 1px var(--gold-400), 0 0 24px -4px var(--glow-gold);
+}
+
+/* =========================================================================
+   NÚT BẤM ĐANG XỬ LÝ (chặn gửi trùng lặp)
+   Cách dùng trong JS:
+     nut.disabled = true;
+     nut.classList.add("dang-xu-ly");
+     ... xử lý xong thì ...
+     nut.disabled = false;
+     nut.classList.remove("dang-xu-ly");
+   Chữ gốc trên nút KHÔNG cần đổi — spinner tự chèn thêm vào bên trái bằng ::before.
+   ========================================================================= */
+button.dang-xu-ly,
+.dang-xu-ly {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+button.dang-xu-ly::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.05em;
+  height: 1.05em;
+  margin: -0.525em 0 0 -0.525em;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: xoay-vong-tron 0.7s linear infinite;
+}
+button.dang-xu-ly.nut-vien::after {
+  border-color: rgba(20, 106, 72, 0.25);
+  border-top-color: var(--green-700);
+}
+
+@keyframes xoay-vong-tron {
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================================================
+   KHUNG XƯƠNG (SKELETON) — dùng khi đang tải danh sách (thay vì chữ "Đang tải...")
+   ========================================================================= */
+.khung-xuong {
+  height: 88px;
+  border-radius: var(--radius);
+  margin: 0.9rem 0;
+  background: linear-gradient(
+    100deg,
+    var(--paper-card) 30%,
+    var(--green-50) 50%,
+    var(--paper-card) 70%
+  );
+  background-size: 200% 100%;
+  animation: luot-sang 1.3s ease-in-out infinite;
+  border: 1px solid var(--line);
+}
+
+@keyframes luot-sang {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.hien-dan {
+  animation: hien-dan-len 0.35s ease both;
+}
+@keyframes hien-dan-len {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body {
+  background-image:
+    radial-gradient(60rem 40rem at 8% -10%, var(--glow-gold) 0%, transparent 60%),
+    radial-gradient(50rem 38rem at 100% 0%, var(--glow-green) 0%, transparent 55%),
+    repeating-linear-gradient(115deg, rgba(211, 179, 107, 0.035) 0px, rgba(211, 179, 107, 0.035) 1px, transparent 1px, transparent 4px);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}

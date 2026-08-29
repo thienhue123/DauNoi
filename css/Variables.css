@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,600;0,700;1,600&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
+
+:root {
+  /* ===== MÀU CHỦ ĐẠO — Xanh Hunter Green =====*/
+  --green-900: #0F3A26;   
+  --green-800: #1A5836;   
+  --green-700: #21694A;
+  --green-600: #2EA363;   
+  --green-100: #D3ECDD;
+  --green-50: #EDF6F0;    
+
+  /* ===== MÀU NHẤN — Vàng đất, bản sáng ===== */
+  --gold-600: #9C7C3E;
+  --gold-500: #D3B36B;   
+  --gold-400: #E2C88C;
+  --gold-100: #FBF3E1;
+
+  /* ===== NỀN & CHỮ ===== */
+  --paper: #FAFAF5;      
+  --paper-card: #FFFFFF;
+
+  --ink-900: #14291D;    
+  --ink-700: #3A5245;
+  --ink-500: #6C8577;    
+
+  --line: #D7E0D3;       
+  --line-strong: #C2CFBC;
+
+  /* ===== TRẠNG THÁI ===== */
+  --danger: #A6453B;
+  --danger-bg: #F8ECEA;
+
+  --warning: #9C7C3E;
+  --warning-bg: #FBF3E1;
+
+  --success: #1A5836;
+  --success-bg: #E5F1E9;
+
+  /* ===== BO GÓC & ĐỔ BÓNG ===== */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 1px 3px rgba(15, 58, 38, 0.09);
+  --shadow: 0 6px 20px rgba(15, 58, 38, 0.11);
+  --shadow-lg: 0 16px 35px rgba(15, 58, 38, 0.15);
+
+  /* ===== FONT ===== */
+  --font-display: "Noto Serif", "Times New Roman", serif;
+  --font-body: "Be Vietnam Pro", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  /* ===== HIỆU ỨNG ===== */
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-bg-dam: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(215, 224, 211, 0.9);
+  --glass-blur: 10px;
+
+  --glow-gold: rgba(211, 179, 107, 0.14);
+  --glow-green: rgba(46, 163, 99, 0.18);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
