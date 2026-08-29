@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đối chiếu & phân loại xét nghiệm (nội bộ)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <nav>
+    <a href="index.html">← Về trang chủ</a>
+    <a href="Dashboard.html">Bảng điều khiển</a>
+    <a href="admin-them-mo.html">Thêm mộ mới</a>
+    <a href="admin-thu-cong.html">Duyệt thủ công</a>
+    <a href="admin-doi-chieu.html" class="active">Đối chiếu xét nghiệm</a>
+    <button id="logout-btn">Đăng xuất</button>
+  </nav>
+  <main>
+    <h1>Đối chiếu & phân loại xét nghiệm (nội bộ)</h1>
+    <p>
+      Danh sách các hồ sơ gia đình ĐÃ CÓ kết quả khớp với mộ chưa danh tính,
+      được nhóm theo mức độ tin cậy để rà soát dễ hơn. Chọn trạng thái cho
+      từng cặp hồ sơ - mộ để chuyển tiếp bước xét nghiệm.
+    </p>
+
+    <div id="bo-loc-trang-thai" class="bo-loc-doi-chieu"></div>
+    <div id="danh-sach-doi-chieu">
+      <p>Đang tải...</p>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/escape-html.js"></script>
+  <script src="js/admin-doi-chieu.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

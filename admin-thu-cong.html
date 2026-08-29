@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rà soát thủ công (nội bộ)</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <nav>
+    <a href="index.html">← Về trang chủ</a>
+    <a href="Dashboard.html">Bảng điều khiển</a>
+    <a href="admin-them-mo.html">Thêm mộ mới</a>
+    <a href="admin-thu-cong.html">Duyệt thủ công</a>
+    <a href="admin-doi-chieu.html">Đối chiếu xét nghiệm</a>
+    <button id="logout-btn">Đăng xuất</button>
+  </nav>
+  <main>
+    <h1>Danh sách cần rà soát thủ công (nội bộ)</h1>
+    <div id="noi-dung-thuc">
+      <p>Danh sách các trường hợp không đủ dữ liệu chồng lấp để thuật toán tự xếp hạng.</p>
+      <div id="danh-sach-ra-soat"></div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/escape-html.js"></script>
+  <script src="js/admin-thu-cong.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

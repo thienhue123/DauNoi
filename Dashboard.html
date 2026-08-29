@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng điều khiển - Hệ thống tìm kiếm liệt sĩ An Giang</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">← Về trang chủ</a>
+    <a href="Dashboard.html" class="active">Bảng điều khiển</a>
+    <a href="admin-them-mo.html">Thêm mộ mới</a>
+    <a href="admin-thu-cong.html">Duyệt thủ công</a>
+    <a href="admin-doi-chieu.html">Đối chiếu xét nghiệm</a>
+    <button id="logout-btn">Đăng xuất</button>
+  </nav>
+  <main>
+    <h1>Hệ thống tìm kiếm liệt sĩ tỉnh An Giang</h1>
+
+    <div class="user-info">
+      <p>Bạn đang đăng nhập với vai trò Quản trị viên</p>
+    </div>
+
+    <!-- MENU QUẢN TRỊ VIÊN -->
+    <div class="menu-section" id="khu-vuc-admin">
+      <h2>⚙️ Quản trị viên</h2>
+      <div class="menu-grid">
+        <a href="admin-them-mo.html" class="menu-card warning">
+          <h3>Thêm mộ mới</h3>
+          <p>Nhập mộ chưa danh tính, quét ngược hồ sơ gia đình</p>
+        </a>
+        <a href="admin-thu-cong.html" class="menu-card success">
+          <h3>Rà soát thủ công</h3>
+          <p>Các trường hợp chưa đủ dữ liệu để hệ thống tự xếp hạng</p>
+        </a>
+        <a href="admin-doi-chieu.html" class="menu-card primary">
+          <h3>Đối chiếu &amp; phân loại xét nghiệm</h3>
+          <p>Các hồ sơ đã có kết quả khớp, chờ phân loại: Chờ xác minh / Đủ điều kiện lấy mẫu / Loại</p>
+        </a>
+      </div>
+    </div>
+  </main>
+  <script src="js/Dashboard.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

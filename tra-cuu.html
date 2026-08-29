@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tra cứu trạng thái hồ sơ - Hệ thống hỗ trợ tìm kiếm liệt sĩ An Giang</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="submit.html">Khai báo tìm kiếm</a>
+    <a href="ket-qua.html">Xem kết quả</a>
+    <a href="tra-cuu.html">Kiểm tra hồ sơ đã gửi</a>
+  </nav>
+
+  <main>
+    <h1>Kiểm tra hồ sơ đã gửi</h1>
+    <p style="background:#fff3cd; padding:0.75rem 1rem; border-radius:6px; color:#856404;">
+      Trang này dùng để <strong>xem lại</strong> hồ sơ bạn đã từng khai báo. Nếu bạn <strong>chưa từng khai báo</strong>,
+      vui lòng qua trang <a href="submit.html">Khai báo tìm kiếm</a> trước.
+    </p>
+
+    <section id="khu-vuc-thiet-bi-nay">
+      <h2>Hồ sơ đã khai báo trên thiết bị này</h2>
+      <p>Hệ thống tự nhớ các hồ sơ bạn đã khai báo trên trình duyệt này.</p>
+      <div id="danh-sach-thiet-bi-nay"></div>
+    </section>
+
+    <hr>
+
+    <section id="khu-vuc-tim-theo-ten">
+      <h2>Tìm theo họ tên liệt sĩ</h2>
+      <p>Dùng khi bạn tra cứu trên thiết bị khác, hoặc trình duyệt đã bị xóa dữ liệu.
+      Nhập đúng 2 thông tin bạn đã khai báo lúc trước để hệ thống xác nhận đúng là hồ sơ của bạn
+      (chỉ nhập tên thôi thì không tra được — tránh lộ hồ sơ người khác trùng tên).</p>
+      <div class="nhom-form">
+        <label for="ten-tim-kiem">Họ và tên liệt sĩ</label>
+        <input type="text" id="ten-tim-kiem" placeholder="VD: Nguyễn Văn A">
+      </div>
+      <div class="nhom-form">
+        <label for="que-quan-tim-kiem">Quê quán (như bạn đã khai báo)</label>
+        <input type="text" id="que-quan-tim-kiem" placeholder="VD: An Giang">
+      </div>
+            <div class="nhom-form">
+        <label for="don-vi-tim-kiem">Đơn vị (như bạn đã khai báo)</label>
+        <input type="text" id="don-vi-tim-kiem" placeholder="VD: E24, B2">
+      </div>
+      <div class="nhom-form">
+        <label for="thoi-gian-tim-kiem">Năm hy sinh (như bạn đã khai báo)</label>
+        <input type="text" id="thoi-gian-tim-kiem" placeholder="VD: 1970, 1968-1972">
+      </div>
+      <button id="nut-tim-kiem">Tìm kiếm</button>
+      <p id="thong-bao-tim-kiem"></p>
+      <div id="danh-sach-tim-kiem"></div>
+    </section>
+  </main>
+
+  <footer style="text-align:center; padding: 1.5rem 0; font-size: 0.8rem;">
+    <a href="auth.html" style="color:#999;">Quản trị</a>
+  </footer>
+
+  <script src="js/escape-html.js"></script>
+  <script src="js/tra-cuu.js"></script>
+  <script src="js/nav.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khai báo tìm kiếm - Hệ thống hỗ trợ tìm kiếm liệt sĩ An Giang</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="submit.html">Khai báo tìm kiếm</a>
+    <a href="ket-qua.html">Xem kết quả</a>
+    <a href="tra-cuu.html">Kiểm tra hồ sơ đã gửi</a>
+  </nav>
+
+  <main>
+    <h1>Khai báo tìm kiếm</h1>
+    <p style="font-size:0.9rem; color:#666;">
+      Đã khai báo trước đó? Xem lại tại <a href="tra-cuu.html">Kiểm tra hồ sơ đã gửi</a> thay vì gửi lại.
+    </p>
+    <p>Vui lòng điền đầy đủ thông tin liệt sĩ mà gia đình còn nhớ. Hệ thống sẽ tự động so khớp với các mộ chưa danh tính.</p>
+
+    <form id="form-khai-bao">
+      <div class="nhom-form">
+        <label for="ho-ten">Họ và tên liệt sĩ:</label>
+        <input type="text" id="ho-ten" name="ho_ten" placeholder="VD: Nguyễn Văn A" required>
+      </div>
+
+      <div class="nhom-form">
+        <label for="que-quan-xa">Quê quán — Xã/Phường (An Giang):</label>
+        <select id="que-quan-xa" name="que_quan_xa">
+          <option value="">-- Không nhớ chính xác / để trống --</option>
+        </select>
+        <p style="font-size:0.8rem; color:#666; margin-top:0.25rem;">
+          Nếu không nhớ chính xác xã/phường, có thể để trống — hệ thống vẫn so khớp theo cấp tỉnh (An Giang).
+        </p>
+        <input type="hidden" id="que-quan-id" name="que_quan_id" value="AG-TINH">
+        <input type="hidden" id="que-quan-text" name="que_quan_text" value="An Giang">
+      </div>
+
+      <div class="nhom-form">
+        <label for="don-vi">Đơn vị:</label>
+        <input type="text" id="don-vi" name="don_vi" placeholder="VD: E24, B2, không rõ">
+      </div>
+      
+      <div class="nhom-form">
+        <label for="nam-sinh">Năm sinh:</label>
+        <input type="text" id="nam-sinh" name="nam_sinh" placeholder="VD: 1970, 1968-1972">
+      </div>
+
+      <div class="nhom-form">
+        <label for="thoi-gian">Năm hy sinh (khoảng):</label>
+        <input type="text" id="thoi-gian" name="nam_hy_sinh" placeholder="VD: 1970, 1968-1972">
+      </div>
+
+      <div class="nhom-form">
+        <label for="dia-diem-hy-sinh">Địa điểm hy sinh:</label>
+        <input type="text" id="dia-diem-hy-sinh" name="dia_diem_hy_sinh" placeholder="VD: Tri Tôn (nơi hy sinh, KHÔNG phải nơi an táng/quy tập hiện tại)">
+        <p style="font-size:0.8rem; color:#666; margin-top:0.25rem;">
+        Ghi nơi liệt sĩ hy sinh (nếu biết), không phải nơi mộ đang được an táng — hai nơi này có thể khác nhau do quy tập.
+        </p>
+      </div>
+      <div class="nhom-form">
+        <label for="lien-he">Số điện thoại hoặc Email liên hệ: <span style="color:red;">*</span></label>
+        <input type="text" id="lien-he" name="lien_he" placeholder="VD: 0912345678 hoặc email@gmail.com" required>
+        <p style="font-size:0.8rem; color:#666; margin-top:0.25rem;">
+          Dùng để thông báo khi có kết quả đối chiếu. Chỉ quản trị viên xem được, không công khai.
+        </p>
+      </div>
+      
+      <div class="nhom-form">
+        <label for="ghi-chu">Ghi chú thêm:</label>
+        <textarea id="ghi-chu" name="ghi_chu" placeholder="VD: Hy sinh ở vùng Tri Tôn, có ảnh / hôn phối tên..."></textarea>
+
+        <div id="vung-dan-anh" tabindex="0" style="margin-top:0.5rem; border:1px dashed #999; border-radius:6px; padding:1rem; text-align:center; cursor:pointer; color:#666; font-size:0.9rem;">
+          Bấm để chọn ảnh, hoặc dán ảnh (Ctrl+V) vào đây — tối đa 3 ảnh, mỗi ảnh ≤ 5MB
+        </div>
+        <input type="file" id="input-chon-anh" accept="image/jpeg,image/png,image/webp,image/heic" multiple hidden>
+        <div id="khung-xem-truoc-anh" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem;"></div>
+        <p id="thong-bao-anh" style="font-size:0.85rem;"></p>
+      </div>
+
+      <button type="submit">Gửi khai báo</button>
+      <p id="thong-bao-ket-qua"></p>
+    </form>
+  </main>
+
+  <footer style="text-align:center; padding: 1.5rem 0; font-size: 0.8rem;">
+    <a href="auth.html" style="color:#999;">Quản trị</a>
+  </footer>
+
+  <!-- Thư viện Supabase (phải load trước supabase-client.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/so-khop-ten.js"></script>
+  <script src="js/matching.js"></script>
+  <script src="js/dia-danh-dropdown.js"></script>
+  <script src="js/anh-khai-bao.js"></script>
+  <script src="js/submit-form.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

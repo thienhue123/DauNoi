@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản trị - Thêm mộ mới</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <nav>
+  <a href="index.html">← Về trang chủ</a>
+  <a href="Dashboard.html">Bảng điều khiển</a>
+  <a href="admin-them-mo.html">Thêm mộ mới</a>
+  <a href="admin-thu-cong.html">Duyệt thủ công</a>
+  <a href="admin-doi-chieu.html">Đối chiếu xét nghiệm</a>
+  <button id="logout-btn">Đăng xuất</button>
+</nav>
+  <main>
+    <h1>Quản trị: Thêm mộ mới + Tìm kiếm hai chiều</h1>
+    <p>Nhập thông tin mộ chưa danh tính, hệ thống sẽ tự động quét toàn bộ hồ sơ gia đình đã khai báo để tìm khả năng khớp.</p>
+    <!-- Nội dung thật, chỉ hiện sau khi nhập đúng mật khẩu -->
+   <div id="noi-dung-quan-tri">
+      <form id="form-nhap-mo">
+        <div class="nhom-form">
+          <label for="ten-tren-bia">Tên ghi trên bia mộ:</label>
+          <input type="text" id="ten-tren-bia" placeholder="VD: Nguyễn Văn A">
+        </div>
+
+        <div class="nhom-form">
+          <label for="que-quan-xa">Quê quán — Xã/Phường (An Giang):</label>
+          <select id="que-quan-xa">
+            <option value="">-- Không rõ / để trống --</option>
+          </select>
+          <p style="font-size:0.8rem; color:#666; margin-top:0.25rem;">
+            Nếu bia ghi tên cũ (VD: Long Châu Hà, Long Xuyên...), hãy quy đổi sang xã/phường hiện tại rồi chọn.
+            Không rõ chính xác thì để trống — hệ thống tính là khớp cấp tỉnh An Giang.
+          </p>
+          <input type="hidden" id="que-quan-id" value="AG-TINH">
+          <input type="hidden" id="que-quan-text" value="An Giang">
+        </div>
+        <div class="nhom-form">
+          <label for="don-vi">Đơn vị:</label>
+          <input type="text" id="don-vi" placeholder="VD: E24, không rõ">
+        </div>
+
+        <div class="nhom-form">
+          <label for="thoi-gian">Năm hy sinh:</label>
+          <input type="text" id="thoi-gian" placeholder="VD: 1970">
+        </div>
+
+        <div class="nhom-form">
+          <label for="nam-sinh">Năm sinh (nếu bia có ghi):</label>
+          <input type="text" id="nam-sinh" placeholder="VD: 1950">
+        </div>
+
+        <div class="nhom-form">
+           <label for="dia-diem-hy-sinh">Địa điểm hy sinh:</label>
+           <input type="text" id="dia-diem-hy-sinh" placeholder="VD: Tri Tôn">
+        </div>
+
+        <div class="nhom-form">
+          <label for="mo-ta">Ghi chú thêm:</label>
+          <textarea id="mo-ta" placeholder="VD: Bia bị vỡ, khó đọc..."></textarea>
+        </div>
+
+        <button type="button" id="nut-tim-ho-so">Tìm kiếm + Lưu mộ mới</button>
+        <p id="thong-bao-xu-ly"></p>
+      </form>
+
+      <div id="danh-sach-ket-qua-nguoc"></div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/so-khop-ten.js"></script>
+  <script src="js/matching.js"></script>
+  <script src="js/dia-danh-dropdown.js"></script>
+  <script src="js/escape-html.js"></script>
+  <script src="js/admin-them-mo.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập quản trị</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main style="max-width: 400px; margin: 5rem auto;">
+    <h1>Đăng nhập quản trị</h1>
+    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">
+  Trang này chỉ dành cho quản trị viên hệ thống. Nếu bạn là gia đình đang tìm kiếm thông tin liệt sĩ, vui lòng quay lại <a href="index.html">trang chủ</a>.
+    </p>
+    <form id="login-form">
+      <input type="password" id="password-input" placeholder="Nhập mật khẩu" required>
+      <button type="submit">Đăng nhập</button>
+      <p id="error-msg" style="color: red;"></p>
+    </form>
+  </main>
+  <script src="js/auth.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>
